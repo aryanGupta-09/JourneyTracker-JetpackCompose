@@ -1,0 +1,20 @@
+New York, 0, false
+Toronto, 556, false
+London, 5711, true
+Paris, 344, true
+Berlin, 878, true
+Dubai, 4625, true
+Mumbai, 1927, true
+Bangkok, 3002, false
+Singapore, 1425, false
+Jakarta, 880, false
+Sydney, 5473, false
+Auckland, 2141, false
+Tokyo, 8205, true
+Seoul, 1177, true
+Shanghai, 1300, true
+Beijing, 1064, true
+Hong Kong, 1987, false
+Manila, 1240, false
+Los Angeles, 11225, false
+Mexico City, 3455, false
