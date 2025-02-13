@@ -52,6 +52,8 @@ This project is a Journey Tracker application built using Jetpack Compose. The a
 
 ## Code Structure
 
+### Main Files
+
 - **MainActivity.kt**:
     - The main activity that sets up the content and initializes the `JourneyManager`.
     - Applies the `MC_A1Theme` to the app.
@@ -60,14 +62,22 @@ This project is a Journey Tracker application built using Jetpack Compose. The a
     - The composable function that defines the UI of the journey screen.
     - Contains the progress section, distance information, buttons, and stops list.
 
+### UI Components
+
 - **StopItem.kt**:
     - The composable function that defines the UI for each stop item.
     - Displays the stop name, visa requirement, and time to reach the stop.
 
-- **Theme.kt**:
-    - Defines the theme and color schemes for the app.
-    - Contains the light and dark color schemes and typography settings.
+- **ProgressArrow.kt**:
+    - The composable function that defines the UI for the progress arrow.
+    - Displays a vertical progress indicator with a circle at the bottom.
+
+### Data Management
 
 - **JourneyManager.kt**:
     - Manages the journey data and progress.
     - Contains functions to mark the next stop, reset the journey, and calculate progress.
+
+- **Stop.kt**:
+    - Data class representing a stop in the journey.
+    - Contains properties like name, visa requirement, and time to reach the stop.
