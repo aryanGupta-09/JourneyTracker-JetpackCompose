@@ -31,7 +31,9 @@ fun JourneyScreen(
     
     // Effect to handle auto-scrolling
     LaunchedEffect(currentPosition) {
-        if (currentPosition >= 4) { // After 5th item (0-based index)
+        if (currentPosition == -1) {
+            listState.scrollToItem(0)
+        } else if (currentPosition >= 4) { // After 5th item (0-based index)
             listState.animateScrollToItem(
                 index = maxOf(0, currentPosition - 4),
                 scrollOffset = 0
@@ -63,20 +65,34 @@ fun JourneyScreen(
                 .fillMaxSize()
                 .padding(16.dp)
         ) {
-            // Progress Section
-            Row(verticalAlignment = Alignment.CenterVertically) {
-                Text(
-                    text = "Progress: ${String.format("%.1f", journeyManager.getProgress())}%",
-                    style = MaterialTheme.typography.titleMedium
-                )
-                
-                if (journeyManager.getProgress() >= 99.9) {
+            // Progress Section with Reset Button
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+                Column {
                     Text(
-                        text = " - Journey Completed",
-                        color = MaterialTheme.colorScheme.tertiary,
-                        style = MaterialTheme.typography.titleMedium,
-                        modifier = Modifier.padding(start = 4.dp)
+                        text = "Progress: ${String.format("%.1f", journeyManager.getProgress())}%",
+                        style = MaterialTheme.typography.titleMedium
                     )
+                    
+                    if (journeyManager.getProgress() >= 99.9) {
+                        Text(
+                            text = "- Journey Completed",
+                            color = MaterialTheme.colorScheme.tertiary,
+                            style = MaterialTheme.typography.titleMedium,
+                            modifier = Modifier.padding(top = 4.dp)
+                        )
+                    }
+                }
+
+                Button(onClick = {
+                    currentPosition = -1
+                    progressHeight = 0f
+                    journeyManager.resetJourney()
+                }) {
+                    Text("Reset")
                 }
             }
 
@@ -141,7 +157,7 @@ fun JourneyScreen(
                     .padding(top = 16.dp)
             ) {
                 LazyColumn(
-                    state = listState,  // Add this line
+                    state = listState,
                     modifier = Modifier
                         .weight(1f)
                         .fillMaxHeight()
