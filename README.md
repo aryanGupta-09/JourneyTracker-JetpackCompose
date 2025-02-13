@@ -18,9 +18,10 @@ This project is a Journey Tracker application built using Jetpack Compose. The a
 
 ## Installation
 
-1. **Clone the repository**:
+1. **Clone the repository and checkout to the Jetpack Compose branch**:
     ```sh
     git clone https://github.com/aryanGupta-09/MC_A1.git
+    git checkout compose
     ```
 2. **Open the project**:
     - Open Android Studio.
