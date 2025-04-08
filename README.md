@@ -14,7 +14,7 @@ This project is a Journey Tracker application built using Jetpack Compose. The a
 
 ## Screenshots
 
-![image](https://github.com/user-attachments/assets/e68923f0-3d0c-4b26-a24e-ea1f96bac31e)
+![screenshot](screenshot.png)
 
 ## Installation
 
