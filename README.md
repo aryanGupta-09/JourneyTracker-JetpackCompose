@@ -1,4 +1,4 @@
-# MC_A1 - Journey Tracker
+# JourneyTracker-JetpackCompose
 
 ## Overview
 
